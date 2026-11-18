@@ -1,0 +1,31 @@
+media:
+  input: static/images
+  output: /images
+
+content:
+  - name: anasayfa
+    label: Anasayfa Metinleri
+    type: file
+    path: content/_index.md
+    fields:
+      - name: title
+        label: Ana Başlık
+        type: string
+      - name: body
+        label: Giriş Açıklaması
+        type: rich-text
+
+  - name: duyurular
+    label: Duyurular
+    type: collection
+    path: content/duyurular
+    fields:
+      - name: title
+        label: Duyuru Başlığı
+        type: string
+      - name: date
+        label: Tarih
+        type: date
+      - name: body
+        label: İçerik
+        type: rich-text

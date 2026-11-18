@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ .Title }} | {{ .Site.Title }}</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: system-ui, -apple-system, sans-serif; line-height: 1.6; color: #1f2937; background: #f9fafb; padding: 2rem 1rem; }
+    main { max-width: 680px; margin: 0 auto; background: #fff; padding: 2.5rem; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+    h1 { font-size: 2rem; color: #111827; margin-bottom: 0.75rem; line-height: 1.25; }
+    .intro { font-size: 1.1rem; color: #4b5563; margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid #e5e7eb; }
+    h2 { font-size: 1.35rem; color: #111827; margin-bottom: 1rem; }
+    ul { list-style: none; }
+    li { padding: 1rem 0; border-bottom: 1px solid #f3f4f6; display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; flex-wrap: wrap; }
+    li:last-child { border-bottom: none; }
+    a { color: #2563eb; text-decoration: none; font-weight: 500; font-size: 1.05rem; }
+    a:hover { text-decoration: underline; }
+    time { font-size: 0.875rem; color: #6b7280; white-space: nowrap; }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>{{ .Title }}</h1>
+      <div class="intro">{{ .Content }}</div>
+    </header>
+    <section>
+      <h2>Duyurular</h2>
+      <ul>
+        {{ range (where .Site.RegularPages "Section" "duyurular") }}
+        <li>
+          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+          <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "02.01.2006" }}</time>
+        </li>
+        {{ else }}
+        <li>Henüz duyuru eklenmemiş.</li>
+        {{ end }}
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

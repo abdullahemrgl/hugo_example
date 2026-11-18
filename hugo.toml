@@ -1,0 +1,4 @@
+baseURL = "http://localhost:1313/"
+locale = "tr-tr"
+title = "Minimal Hugo & Pages CMS Demo"
+disableKinds = ["taxonomy", "term", "section", "RSS", "sitemap"]

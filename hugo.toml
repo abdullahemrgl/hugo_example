@@ -1,4 +1,4 @@
-baseURL = "/"
+baseURL = "https://abdullahemrgl.github.io/hugo_example/"
 languageCode = "tr-tr"
 title = "Minimal Hugo & Pages CMS Demo"
 disableKinds = ["taxonomy", "term", "section", "RSS", "sitemap"]
